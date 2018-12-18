@@ -22,6 +22,9 @@ class Wordlift_Install_3_20_0 extends Wordlift_Install {
 		$this->add_names_to_existing_terms();
 		$this->rename_localbusiness_to_local_business();
 
+		// Flush all the caches because of #881, we need to ensure we're not caching the URL to ID mapping.
+		Wordlift_File_Cache_Service::flush_all();
+
 	}
 
 	private function add_names_to_existing_terms() {
@@ -57,8 +60,6 @@ class Wordlift_Install_3_20_0 extends Wordlift_Install {
 			// loaded if the `WL_ALL_ENTITY_TYPES` constant isn't set.
 			$result_1 = update_term_meta( $term->term_id, '_wl_name', $name );
 			$result_2 = update_term_meta( $term->term_id, '_wl_uri', "http://schema.org/$name" );
-
-			// $this->log->debug( 'name :: ' . var_export( $result_1, true ) . ' URI :: ' . var_export( $result_2, true ) );
 
 		}
 
