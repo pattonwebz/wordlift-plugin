@@ -117,6 +117,7 @@ function wl_entities_box_content( $post ) {
 		$all_referenced_entities_ids = array_merge( $all_referenced_entities_ids, $entity_ids );
 
 	}
+
 	// Json encoding for classification boxes structure.
 	$classification_boxes = wp_json_encode( $classification_boxes );
 

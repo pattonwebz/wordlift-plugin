@@ -143,7 +143,8 @@ You can open your datasets to the public, attaching to it a free or a commercial
 == Changelog ==
 
 
-= 3.20.0 (2018-12-07) =
+= 3.20.0 (2018-12-18) =
+* Enhancement: [#881](https://github.com/insideout10/wordlift-plugin/issues/881): Polylang 2.5 plugin compatibility.
 * Enhancement: [#868](https://github.com/insideout10/wordlift-plugin/issues/868): Remove `wlSettings` from WP Rocket inline optimization.
 * Enhancement: [#861](https://github.com/insideout10/wordlift-plugin/issues/861): Arabic can be added as supported language.
 * Enhancement: [#851](https://github.com/insideout10/wordlift-plugin/issues/851): add a filter to allow 3rd parties to change the TinyMCE editor id via JavaScript.

@@ -121,11 +121,11 @@ class Wordlift_Entity_Uri_Service {
 		// we don't want these data to long live.
 		$this->uri_to_post = array_reduce( $posts, function ( $carry, $item ) use ( $that ) {
 			$uris = get_post_meta( $item->ID, WL_ENTITY_URL_META_NAME )
-					+ get_post_meta( $item->ID, Wordlift_Schema_Service::FIELD_SAME_AS );
+			        + get_post_meta( $item->ID, Wordlift_Schema_Service::FIELD_SAME_AS );
 
 			return $carry
-				   // Get the URI related to the post and fill them with the item id.
-				   + array_fill_keys( $uris, $item );
+			       // Get the URI related to the post and fill them with the item id.
+			       + array_fill_keys( $uris, $item );
 		}, array() );
 
 		// Add the not found URIs.
@@ -179,6 +179,14 @@ class Wordlift_Entity_Uri_Service {
 					'compare' => '=',
 				),
 			),
+			/*
+			 * Set the `lang` flag to `` in order to avoid Polylang filter out entities.
+			 *
+			 * @link https://github.com/insideout10/wordlift-plugin/issues/881
+			 *
+			 * @since 3.20.0 to ensure compatibility with Polylang 2.5.0, set the `lang` flag to ``.
+			 */
+			'lang'                => '',
 		);
 
 		// Only if the current uri is not an internal uri, entity search is
