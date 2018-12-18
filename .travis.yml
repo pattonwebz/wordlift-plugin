@@ -36,6 +36,11 @@ matrix:
     # Additional PHP Unit tests specific to some users' environment, i.e. PHP 5.5 and WP 4.7.
     - php: 5.5
       env: SCRIPT=test:php WP_VERSION=4.7
+    # Test WordPress 5.0 with PHP 5.6 and 7.0.
+    - php: 5.6
+      env: SCRIPT=test:multisite WP_VERSION=5.0
+    - php: 7.0
+      env: SCRIPT=test:multisite WP_VERSION=5.0
   allow_failures:
     # JavaScript end-to-end tests.
     - php: 5.6

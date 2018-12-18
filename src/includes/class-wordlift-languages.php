@@ -33,11 +33,15 @@ class Wordlift_Languages {
 	/**
 	 * The list of supported language codes.
 	 *
+	 * @link https://github.com/insideout10/wordlift-plugin/issues/861
+	 *
+	 * @since 3.20.0 added arabic.
 	 * @since 3.9.0
 	 *
 	 * @var array An array of language codes.
 	 */
 	private static $codes = array(
+		'ar',
 		'be',
 		'bg',
 		'ca',
